@@ -1,80 +1,40 @@
-from zipfile import ZipFile
-from rarfile import RarFile
+import zipfile    
+import rarfile              
 import os
-import shutil
-# from glob import glob # For glob.extend
-import glob             # for single glob
-import re
-
-# Run: pip install rarfile (https://rarfile.readthedocs.io/en/latest/api.html) also look at: https://stackoverflow.com/questions/43527641/extract-single-file-from-rar-archive-with-rarfile-in-python
-#      Mac = brew install unrar / UBUNTU = sudo apt-get install -y rar unrar / 
-
+import glob
+        
 class Extract_archive:
     
     def __init__(self):
-        
-        # Make sure the paths work with WINDOWS OS
-        self.DESTINITION_PATH = 'dumps/'
-        self.SOURCE_PATH = 'archives/'
-        
-        self.SOURCE = 'archives/1.rar' 
-        
-        self.FILE_BASE_NAME = os.path.basename(self.SOURCE)
-        self.DESTINITION_DIRECTORY,  self.SOURCE_FILE_EXTENTION = os.path.splitext(self.FILE_BASE_NAME)
-        self.DESTINITION = f'{self.DESTINITION_PATH}{self.DESTINITION_DIRECTORY}'
-
-    def print_static_values(self):
-        print(f'Source: {self.SOURCE}')
-        print(f'File name: {self.FILE_BASE_NAME}')
-        print(f'Extention: {self.SOURCE_FILE_EXTENTION}')
-        print(f'Destinition: {self.DESTINITION}')
+        self.SOURCE_DIRECTORY = 'archives'
+        self.DESTINITION_DIRECTORY = 'dumps'
+        self.UNRAR_PATH = 'C:\\Program Files\\WinRAR\\UnRAR.exe'    # Used when the script is running on Windows OS
     
     def unzip(self):
+        os.chdir(os.path.normpath(os.getcwd() + os.sep + self.SOURCE_DIRECTORY))  
         
-        # NAVIGATING ONE DIRECTORY BACK AND THEN INSIDE THE 'archives' directory.
-        # os.chdir()    Change directory
-        # normpath()    Takes care of the Different OS path types
-        # os.getcwd()   Get the current working directory
-        # os.sep()      PATH SEPERATOR, \ for WINDOWS and / for LINUX / MAC
-        os.chdir(os.path.normpath(os.getcwd() + os.sep + 'archives'))  
+        for file in glob.glob(('*.zip')):
+            archive_directory = os.path.splitext(file)[0]
+            with zipfile.ZipFile(file, 'r') as zipObj:
+                zipObj.extractall(os.path.normpath(os.getcwd() + os.sep + '..' + os.sep + self.DESTINITION_DIRECTORY + os.sep + archive_directory + '_ZIP'))
         
-        # for file in os.scandir(self.SOURCE_PATH):
-        for file in glob.glob(('*.zip')): # OR
-            # destination_directory, source_file_extention = os.path.splitext(os.path.basename(file))
-            destination_directory = os.path.splitext(file)[0] # OR
-            # if source_file_extention == '.zip':
-            with ZipFile(file, 'r') as zipObj: # OR ident
-                # zipObj.extractall(f'{self.DESTINITION_PATH}{destination_directory}_ZIP') 
-                zipObj.extractall(f'../{self.DESTINITION_PATH}{destination_directory}_ZIP') # OR
-    
-    def unrar(self):
-        # os.chdir("/Users/hsingh/Documents/Python/compress_extract_tool/archives") 
-        #! No need to run this because the current path has changed to /Users/hsingh/Documents/Python/compress_extract_tool/archives
-        #! When we ran the os.chdir() in the previous step 
-        # os.chdir(os.path.normpath(os.getcwd() + os.sep + 'archives'))
+        print ('\nUnzip Complete.....')
+        os.chdir(os.path.normpath(os.getcwd() + os.sep + '..'))
         
-        #TODO find a way to use glob for multiple file extentions
+    def unrar(self): 
+        os.chdir(os.path.normpath(os.getcwd() + os.sep + self.SOURCE_DIRECTORY)) 
+        
+        if os.name == 'nt':
+            rarfile.UNRAR_TOOL = self.UNRAR_PATH
         
         for file in glob.glob(('*.rar')):
-            destination_directory = os.path.splitext(file)[0]
-            with RarFile(file, 'r') as rarObj:
-                rarObj.extractall(f'../{self.DESTINITION_PATH}{destination_directory}_RAR')
-            
-          
-    def extract_archive(self):
-        if self.SOURCE_FILE_EXTENTION == '.zip':
-            with ZipFile(self.SOURCE, 'r') as zipObj:
-                zipObj.extractall(f'{self.DESTINITION_PATH}{self.DESTINITION_DIRECTORY}') 
-            print(f'UNZIP Complete. Please check {self.DESTINITION_PATH}')
-        elif self.SOURCE_FILE_EXTENTION == '.rar':
-            with RarFile(self.SOURCE, 'r') as rarObj:
-                rarObj.extractall(f'{self.DESTINITION_PATH}{self.DESTINITION_DIRECTORY}')
-            print(f'UNRAR Complete. Please check {self.DESTINITION_PATH}')
-        else:
-            print('Not supported')
-            
+            archive_directory = os.path.splitext(file)[0]
+            with rarfile.RarFile(file, 'r') as rarObj:
+                rarObj.extractall(os.path.normpath(os.getcwd() + os.sep + '..' + os.sep + self.DESTINITION_DIRECTORY + os.sep + archive_directory + '_RAR'))
+                
+        print ('UnRAR Complete.....')
+        os.chdir(os.path.normpath(os.getcwd() + os.sep + '..'))
+        
     def boot(self):
-        # self.print_static_values()
         self.unzip()
         self.unrar()
-        # self.extract_archive()
