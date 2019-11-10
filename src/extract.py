@@ -32,7 +32,7 @@ class Extract_archive:
             with rarfile.RarFile(file, 'r') as rarObj:
                 rarObj.extractall(os.path.normpath(os.getcwd() + os.sep + '..' + os.sep + self.DESTINITION_DIRECTORY + os.sep + archive_directory + '_RAR'))
                 
-        print ('UnRAR Complete.....')
+        print ('UnRAR Complete.....\n')
         os.chdir(os.path.normpath(os.getcwd() + os.sep + '..'))
         
     def boot(self):
