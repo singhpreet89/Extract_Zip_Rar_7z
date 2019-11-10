@@ -2,7 +2,7 @@
 This tool supports the Extraction of ZIP and RAR files Compressed without a Password and support for files compressed with Password along with ZIP and RAR Compression is coming in the future release.
 
 ## Installation
-1. Install [Python](https://www.python.org/downloads/)
+1. Install [Python 3](https://www.python.org/downloads/)
 2. Use the package manager [pip](https://pip.pypa.io/en/stable/) to install [rarfile](https://rarfile.readthedocs.io/en/latest/api.html).
 
 ```bash
