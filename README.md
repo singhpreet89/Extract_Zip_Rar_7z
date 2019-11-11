@@ -1,4 +1,4 @@
-# compress_extract_tool
+# UnZIP_UnRAR_application
 This tool supports the Extraction of ZIP and RAR files Compressed without a Password and support for files compressed with Password along with ZIP and RAR Compression is coming in the future release.
 
 ## Installation
