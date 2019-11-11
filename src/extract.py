@@ -51,9 +51,10 @@ class Extract_archive:
             print("\nExtraction complete with the following Exceptions:")
             for key, value in self.EXCEPTIONS.items():
                 print(f'{key} -----> {value}')
+            print("\n")
         else:
             print("\nExtraction complete.....\n")
-       
+
     def boot(self):
         self.unzip()
         self.unrar()

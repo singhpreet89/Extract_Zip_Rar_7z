@@ -28,7 +28,7 @@ sudo apt-get install -y rar unrar
 1. Close the Repository.
 2. Install all the requirements listed in the earlier section.
 3. Delete the samples provided and copy all the compressed ***".zip"*** and ***".rar"*** files into the *"archives"* directory.
-    ###### NOTE: A few Samples of ***".zip"*** and ***".rar"*** files are provided in the ***"archives"*** directory to test the tool.
+    ###### NOTE: A few Samples of normal and corrupted ***".zip"*** and ***".rar"*** files are provided in the ***"archives"*** directory to test the tool for **Extraction** and **Exception handling**.
 4. The Uncompressed files will be generated under the ***"dumps"*** directory.
 
 ## Running the application
