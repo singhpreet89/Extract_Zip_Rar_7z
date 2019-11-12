@@ -36,7 +36,7 @@ Navigate to the **UnZIP_UnRar_application** directory and run the following comm
 ```bash
 python index.py
 ```
-- ###### NOTE: The value for variable ***self.INITIAL_DIRECTORY_NAME*** is equal to ***1*** in the ***"extract.py"*** file which indicates that the first extracted archive will be stored in the directory ***"1"***. Similarly, if 10 archives are extracted 1o new sub-directories will be created under ***"dumps"*** directory with ***names: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10***.    
+- ###### NOTE: The value for variable ***self.INITIAL_DIRECTORY_NAME*** is equal to ***1*** in the ***"extract.py"*** file which indicates that the first extracted archive will be stored in the directory ***"1"***. Similarly, if 10 archives are extracted 10 new sub-directories will be created under ***"dumps"*** directory with ***names: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10***.    
 ```python 
 self.INITIAL_DIRECTORY_NAME = 1
 ```
