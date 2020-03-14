@@ -8,9 +8,10 @@ This tool supports the Extraction of ZIP and RAR files Compressed without a Pass
 ```bash
 pip install rarfile
 ```
-3. RAR file compression and uncompression is not directly possible with the [rarfile](https://rarfile.readthedocs.io/en/latest/api.html) library and requires additional downloads depending on the Operating System.
+3. RAR file Compression and Decompression is not directly supported by the [rarfile](https://rarfile.readthedocs.io/en/latest/api.html) library and requires additional downloads depending on the Operating System.
 
-- **For Windows:** Install [WinRAR](https://www.win-rar.com) (Either 32bit or 64bit). he PATH for WinRAR is already provided inside the constructor of ***"extract.py"*** which should suffice most of the Windows users.  Unless you have installed the 32-bit WinRAR on the 64-bit Windows Operating System, in this case, change the value of UNRAR_PATH in ***"extract.py"*** as follows:
+- **For Windows:** Install [WinRAR](https://www.win-rar.com) (Either 32bit or 64bit). The PATH for WinRAR is already provided inside the constructor of ***"extract.py"*** which should suffice most of the Windows users.  Unless you have installed the 32-bit WinRAR on the 64-bit Windows Operating System.
+In this case, change the value of UNRAR_PATH in ***"extract.py"*** as follows:
 
 ```python
 self.UNRAR_PATH = 'C:\\Program Files (x86)\\WinRAR\\UnRAR.exe'
@@ -26,10 +27,10 @@ sudo apt-get install -y rar unrar
 ``` 
 ## Usage
 1. Close the Repository.
-2. Install all the requirements listed in the earlier section.
-3. Delete the samples provided and copy all the compressed ***".zip"*** and ***".rar"*** files into the *"archives"* directory.
+2. Install Python 3 and the required packages / libraries listed in the earlier section.
+3. Delete the samples(Test files) provided with the repository under the *"archives"* directory and copy all the compressed ***".zip"*** and ***".rar"*** files instead.
     ###### NOTE: A few Samples of normal and corrupted ***".zip"*** and ***".rar"*** files are provided in the ***"archives"*** directory to test the tool for **Extraction** and **Exception handling**.
-4. The Uncompressed files will be generated under the ***"dumps"*** directory.
+4. The Decompressed files will be generated under the ***"dumps"*** directory.
 
 ## Running the application
 Navigate to the **UnZIP_UnRar_application** directory and run the following command:
