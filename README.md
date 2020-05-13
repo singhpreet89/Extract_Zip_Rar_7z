@@ -35,7 +35,7 @@ sudo apt-get install -y rar unrar
 4. The ***"extracted"*** directory will contain all the extracted files under their respective sub directories.
 
 ## Running the application
-Navigate to the **compress_extract_tool** directory and run the following command:
+Navigate to the **UnZIP_UnRar_application** directory and run the following command:
 ```bash
 python index.py
 ```
