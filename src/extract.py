@@ -19,7 +19,6 @@ class Extract_archive:
         self.INITIAL_DIRECTORY_NAME = int(os.getenv("INITIAL_DIRECTORY_NAME"))
         self.WINDOWS_OS_UNRAR_PATH = os.getenv("WINDOWS_OS_UNRAR_PATH")
         self.SUPPORTED_FORMATS = ['*.' + value for value in os.getenv("SUPPORTED_FORMATS").split(',')]
-        self.DELETE_AFTER_EXTRACTION = os.getenv("DELETE_AFTER_EXTRACTION")
 
         self.EXCEPTIONS = dict()                                          
 
