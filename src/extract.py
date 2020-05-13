@@ -44,9 +44,7 @@ class Extract_archive:
                     print(f'{count}. FILE: {file} =====> {str(self.INITIAL_DIRECTORY_NAME)}\n----------------------------------------------------------------------------------------')
                     self.INITIAL_DIRECTORY_NAME += 1
                     count += 1
-
                 except:
-                    # print(f'\n*****\nALERT for FILE: {file}\nException: {sys.exc_info()[1]}\nException type: {sys.exc_info()[0]}\n*****\n')
                     self.EXCEPTIONS[f'File: {str(file)}'] = f'Exception type: {sys.exc_info()[0]}, {sys.exc_info()[1]}'
 
     def check_exceptions(self):   
@@ -54,17 +52,9 @@ class Extract_archive:
             print("\nEXCEPTIONS:")
             for key, value in self.EXCEPTIONS.items():
                 print(f'{key} =====> {value}')
-            print("\nEXTRACTION finished with exceptions.....")
+            print("\nEXTRACTION finished with one or more exceptions.....")
         else:
-            if bool(self.DELETE_AFTER_EXTRACTION) == True:
-                self.delete_archive_helper()
             print('\nEXTRACTION finished.....')
-
-    def delete_archive_helper(self):
-        try:
-            shutil.rmtree(os.getcwd())
-        except Exception as e:
-            print('Failed to delete %s. Reason: %s' % (os.getcwd(), e))
 
     def boot(self):
         self.extract()
