@@ -1,4 +1,4 @@
-# UnZIP_UnRAR_application
+# Extract_Zip_Rar_7z
 This tool supports **.zip**, **.rar** and **.7z** extraction.
 
 ## New Features!
@@ -12,8 +12,7 @@ pip install rarfile
 pip install py7zr
 pip install python-dotenv
 ```
-
- 3. RAR file extraction use [rarfile](https://rarfile.readthedocs.io/en/latest/api.html) and requires additional dependencyies based on the Operating System.
+3. RAR extraction use [rarfile](https://rarfile.readthedocs.io/en/latest/api.html) and requires additional dependenccies based on the Operating System.
 - **For Windows:** Install [WinRAR](https://www.win-rar.com) (Either 32bit or 64bit). The PATH for WinRAR is already provided as an Environment variable: ***WINDOWS_OS_UNRAR_PATH = C:\\Program Files\\WinRAR\\UnRAR.exe*** in the ***".env"*** file which should work for most Windows OS users unless a 32-bit WinRAR version is installed on the 64-bit Windows Operating System, in this case, change the value of UNRAR_PATH in ***".env"*** as follows:
 ```bash
 WINDOWS_OS_UNRAR_PATH = C:\\Program Files (x86)\\WinRAR\\UnRAR.exe
