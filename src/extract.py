@@ -1,16 +1,15 @@
-import zipfile    
+from zipfile import ZipFile    
 import rarfile
-import py7zr              
+from py7zr import SevenZipFile               
 import os
-import glob
+from glob import glob
 import sys
-import dotenv
+from dotenv import load_dotenv
 import shutil
 
-class Extract_archive:
-    
+class Extract_archive: 
     def __init__(self):
-        dotenv.load_dotenv()
+        load_dotenv()
         
         self.SOURCE_DIRECTORY = os.getenv("SOURCE_DIRECTORY")
         os.chdir(os.path.normpath(os.getcwd() + os.sep + self.SOURCE_DIRECTORY))
@@ -26,19 +25,19 @@ class Extract_archive:
         if os.name == 'nt':
             rarfile.UNRAR_TOOL = self.WINDOWS_OS_UNRAR_PATH
 
-        print()
+        print("\n******************** EXTRACTED files ********************")
         count = 1
         for format in self.SUPPORTED_FORMATS:
-            for file in glob.glob(format):
+            for file in glob(format):
                 try:
                     if format == '*.zip':
-                        with zipfile.ZipFile(file, 'r') as zipObj:
+                        with ZipFile(file, 'r') as zipObj:
                             zipObj.extractall(os.path.normpath(os.getcwd() + os.sep + '..' + os.sep + self.DESTINITION_DIRECTORY + os.sep + str(self.INITIAL_DIRECTORY_NAME)))
                     elif format == '*.rar':
                         with rarfile.RarFile(file, 'r') as rarObj:
                             rarObj.extractall(os.path.normpath(os.getcwd() + os.sep + '..' + os.sep + self.DESTINITION_DIRECTORY + os.sep + str(self.INITIAL_DIRECTORY_NAME)))
                     elif format == '*.7z':
-                        with py7zr.SevenZipFile(file, 'r') as sevenZObj:
+                        with SevenZipFile(file, 'r') as sevenZObj:
                             sevenZObj.extractall(os.path.normpath(os.getcwd() + os.sep + '..' + os.sep + self.DESTINITION_DIRECTORY + os.sep + str(self.INITIAL_DIRECTORY_NAME)))
                     print(f'{count}. FILE: {file} =====> {str(self.INITIAL_DIRECTORY_NAME)}\n----------------------------------------------------------------------------------------')
                     self.INITIAL_DIRECTORY_NAME += 1
@@ -48,7 +47,7 @@ class Extract_archive:
 
     def check_exceptions(self):   
         if self.EXCEPTIONS:
-            print("\nEXCEPTIONS:")
+            print("\n******************** EXCEPTIONS ********************")
             for key, value in self.EXCEPTIONS.items():
                 print(f'{key} =====> {value}')
             print("\nEXTRACTION finished with one or more exceptions.....")
