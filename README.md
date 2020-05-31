@@ -1,6 +1,6 @@
 # Extract_Zip_Rar_7z
 <p align="center">
-	<a href="https://forthebadge.com" alt="MADE WITH: PYTHON">
+	<a href="https://www.python.org/" alt="MADE WITH: PYTHON">
 		<img src="https://forthebadge.com/images/badges/made-with-python.svg" />
 	</a>
 </p>
