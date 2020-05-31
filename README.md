@@ -22,7 +22,7 @@
 	</a>
 </p>
 <p align="center">
-  This tool supports **.zip**, **.rar** and **.7z** extraction.
+  <strong>This tool supports .zip, .rar and .7z extraction.</strong>
 </p>
   
 ## Installation & Requirements
