@@ -5,17 +5,17 @@
 	</a>
 </p>
 <p align="center">
-  <a href="https://badgen.net" alt="Powered by: Python 3.8.2">
-    <img src="https://badgen.net/badge/Powered%20by/Python%203.8.2/3570A0" />
+  <a href="https://www.python.org/downloads/" alt="Powered by: Python 3.8.2">
+    <img src="https://badgen.net/badge/Powered%20by/Python%20v3.8.2/3570A0" />
   </a>
-  <a href="https://badgen.net" alt="Dependency: rarfile">
-    <img src="https://badgen.net/badge/rarfile/3.1/148024" />
+  <a href="https://pypi.org/project/rarfile/" alt="Dependency: rarfile">
+    <img src="https://badgen.net/badge/rarfile/v3.1/148024" />
   </a>
-  <a href="https://badgen.net" alt="Dependency: py7zr">
-    <img src="https://badgen.net/badge/py7zr/0.6/148024" />
+  <a href="https://pypi.org/project/py7zr/" alt="Dependency: py7zr">
+    <img src="https://badgen.net/badge/py7zr/v0.6/148024" />
   </a>
-  <a href="https://badgen.net" alt="Dependency: python-dotenv">
-    <img src="https://badgen.net/badge/python-dotenv/0.13.0/148024" />
+  <a href="https://pypi.org/project/python-dotenv/" alt="Dependency: python-dotenv">
+    <img src="https://badgen.net/badge/python-dotenv/v0.13.0/148024" />
   </a>
 	<a href="https://opensource.org/licenses/MIT" alt="License: MIT">
 		<img src="https://img.shields.io/badge/License-MIT-green.svg" />
