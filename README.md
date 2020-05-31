@@ -1,8 +1,29 @@
 # Extract_Zip_Rar_7z
-This tool supports **.zip**, **.rar** and **.7z** extraction.
-
-## New Features!
-  - Support for **.7z** extraction added.
+<p align="center">
+	<a href="https://forthebadge.com" alt="MADE WITH: PYTHON">
+		<img src="https://forthebadge.com/images/badges/made-with-python.svg" />
+	</a>
+</p>
+<p align="center">
+  <a href="https://badgen.net" alt="Powered by: Python 3.8.2">
+    <img src="https://badgen.net/badge/Powered%20by/Python%203.8.2/3570A0" />
+  </a>
+  <a href="https://badgen.net" alt="Dependency: rarfile">
+    <img src="https://badgen.net/badge/rarfile/3.1/148024" />
+  </a>
+  <a href="https://badgen.net" alt="Dependency: py7zr">
+    <img src="https://badgen.net/badge/py7zr/0.6/148024" />
+  </a>
+  <a href="https://badgen.net" alt="Dependency: python-dotenv">
+    <img src="https://badgen.net/badge/python-dotenv/0.13.0/148024" />
+  </a>
+	<a href="https://opensource.org/licenses/MIT" alt="License: MIT">
+		<img src="https://img.shields.io/badge/License-MIT-green.svg" />
+	</a>
+</p>
+<p align="center">
+  This tool supports **.zip**, **.rar** and **.7z** extraction.
+</p>
   
 ## Installation & Requirements
 1. Install [Python 3](https://www.python.org/downloads/)
@@ -27,7 +48,7 @@ brew install unrar
 sudo apt-get install -y rar unrar
 ``` 
 ## Usage
-1. Clone the Repository.
+1. Clone the repository.
 2. Install all the requirements listed in the earlier section.
 3. Delete the samples provided and copy the compressed files into the ***"archives"*** directory.
     ###### NOTE: A few Samples of normal and corrupted **.zip**, **.rar** and **.7z** files are provided in the ***"archives"*** directory to test **Extraction** and **Exception handling**.
