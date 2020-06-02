@@ -41,8 +41,8 @@ class Extract_archive:
                     print(f'{count}. FILE: {file} =====> {str(self.INITIAL_DIRECTORY_NAME)}\n----------------------------------------------------------------------------------------')
                     self.INITIAL_DIRECTORY_NAME += 1
                     count += 1
-                except:
-                    self.EXCEPTIONS[f'File: {str(file)}'] = f'Exception type: {sys.exc_info()[0]}, {sys.exc_info()[1]}'
+                except Exception as ex:
+                    self.EXCEPTIONS[f'File: {str(file)}'] = f'Exception type: {sys.exc_info()[0]}, {ex}'
 
     def check_exceptions(self):   
         if self.EXCEPTIONS:
