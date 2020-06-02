@@ -5,7 +5,6 @@ import os
 from glob import glob
 import sys
 from dotenv import load_dotenv
-import shutil
 
 class Extract_archive: 
     def __init__(self):
